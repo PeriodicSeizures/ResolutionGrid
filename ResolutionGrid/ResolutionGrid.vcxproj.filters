@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="entity\entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resolutiongrid\fastunorderedlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resolutiongrid\resolutiongrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test\entity\entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="entity\entity.cpp">
+    <ClCompile Include="test\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="test\entity\entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

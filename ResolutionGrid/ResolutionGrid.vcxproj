@@ -143,13 +143,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="entity\entity.h" />
+    <ClInclude Include="test\entity\entity.h" />
     <ClInclude Include="resolutiongrid\fastunorderedlist.h" />
     <ClInclude Include="resolutiongrid\resolutiongrid.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="entity\entity.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="test\entity\entity.cpp" />
+    <ClCompile Include="test\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

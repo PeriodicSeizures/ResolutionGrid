@@ -1,10 +1,10 @@
 #include <iostream>
 #include <cassert>
-#include "resolutiongrid/resolutiongrid.h"
+#include "../resolutiongrid/resolutiongrid.h"
 #include "entity/entity.h"
 
 //#define NDEBUG
-
+//using namespace 
 using namespace resolutiongrid;
 
 void printBuffer(Entity **buf, unsigned int size) {
