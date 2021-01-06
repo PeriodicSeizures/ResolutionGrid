@@ -144,11 +144,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="entity\entity.h" />
-    <ClInclude Include="lib\fix.h" />
-    <ClInclude Include="resgrid\fastunorderedlist.h" />
-    <ClInclude Include="resgrid\resolutiongrid.h" />
-    <ClInclude Include="testtemplatefunction.h" />
-    <ClInclude Include="vec2.h" />
+    <ClInclude Include="resolutiongrid\fastunorderedlist.h" />
+    <ClInclude Include="resolutiongrid\resolutiongrid.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entity\entity.cpp" />

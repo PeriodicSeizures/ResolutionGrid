@@ -3,11 +3,7 @@
 
 #include <stdint.h>
 #include <algorithm>
-#include <iostream>
-#include <cassert>
 #include "fastunorderedlist.h"
-
-
 
 //#define NDEBUG
 namespace resolutiongrid {
@@ -150,7 +146,7 @@ namespace resolutiongrid {
 			}
 		}
 
-		void update_grid() {
+		void refresh() {
 			// iterate every entity, checking for changes in current position (converted to an node index) and prevIndex
 			for (uint16_t i = 0; i < elements.size(); i++) {
 				//if

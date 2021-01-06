@@ -15,22 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resgrid\resolutiongrid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\fix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="entity\entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vec2.h">
+    <ClInclude Include="resolutiongrid\fastunorderedlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resgrid\fastunorderedlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="testtemplatefunction.h">
+    <ClInclude Include="resolutiongrid\resolutiongrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

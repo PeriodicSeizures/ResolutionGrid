@@ -1,8 +1,9 @@
 #include <iostream>
-#include "resgrid/resolutiongrid.h"
-#include "testtemplatefunction.h"
+#include <cassert>
+#include "resolutiongrid/resolutiongrid.h"
 #include "entity/entity.h"
-#include "lib/fix.h"
+
+//#define NDEBUG
 
 using namespace resolutiongrid;
 
@@ -32,9 +33,6 @@ uint16_t worldToGridIndex(Entity *e) {
 }
 
 int main(int argc, char **argv) {
-	
-	auto grid = ResolutionGrid<Entity*, worldToGridIndex>();
-
 	vec2 pos0 = { 4.6f, 3.9f };
 	vec2 pos1 = { -14.5f, 504.6f };
 	vec2 pos2 = { 317.9f, -59.3f };
@@ -43,15 +41,16 @@ int main(int argc, char **argv) {
 	Entity e1(pos1);
 	Entity e2(pos2);
 
+	// create grid
+	auto grid = ResolutionGrid<Entity*, worldToGridIndex>();
+
 	// insert test
 	grid.insert(&e0);
 	grid.insert(&e1);
 	grid.insert(&e2);
 
-	//grid->update_grid();
-
+	// retrieval test
 	Entity **ret_buffer = new Entity*[3];
-
 	uint16_t ret_end = 0;
 
 	grid.getCoarseElements(worldToGridIndex(pos1), ret_buffer, ret_end);
@@ -59,18 +58,6 @@ int main(int argc, char **argv) {
 	printBuffer(ret_buffer, ret_end);
 	
 	delete[] ret_buffer;
-//while (true) {}
-	//std::cout << i << "\n";
-
-	/*
-	auto g = TestT<Entity*, worldToGridIndex>();
-
-	Entity e({ 3.4f, 5.6f });
-
-	g.setElement(&e);
-
-	g.runMethodTest();
-	*/
 
 	return 0;
 }
