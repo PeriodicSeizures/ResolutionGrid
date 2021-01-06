@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
 
 	uint16_t ret_end = 0;
 
-	grid.getCoarseEntities(worldToGridIndex(pos1), ret_buffer, ret_end);
+	grid.getCoarseElements(worldToGridIndex(pos1), ret_buffer, ret_end);
 	
 	printBuffer(ret_buffer, ret_end);
 	

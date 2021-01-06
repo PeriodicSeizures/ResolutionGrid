@@ -24,7 +24,22 @@ namespace resolutiongrid {
 	static constexpr uint16_t COARSE_SIZE = COARSE_WIDTH * COARSE_WIDTH;
 	static constexpr uint16_t GRID_SIZE = GRID_WIDTH * GRID_WIDTH;
 
+	static constexpr uint16_t gridCoordinateToGridIndex(uint8_t x, uint8_t y) {
+		return y * GRID_WIDTH + x;
+	}
 
+	static constexpr void gridCoordinate(uint16_t grid_index, uint8_t &ret_x, uint8_t &ret_y) {
+		ret_x = grid_index % GRID_WIDTH;
+		ret_y = grid_index / GRID_WIDTH;
+	}
+
+	static constexpr uint16_t getRoughIndex(uint16_t grid_index) {
+		return grid_index / (GRID_SIZE / ROUGH_SIZE);
+	}
+
+	static constexpr uint16_t getCoarseIndex(uint16_t grid_index) {
+		return grid_index / (GRID_SIZE / COARSE_SIZE);
+	}
 
 	template<typename T, uint16_t(*worldToGridIndexMethod)(T)> class ResolutionGrid {
 	private:
@@ -72,22 +87,7 @@ namespace resolutiongrid {
 		//	return index;
 		//}
 
-		static constexpr uint16_t gridCoordinateToGridIndex(uint8_t x, uint8_t y) {
-			return y * GRID_WIDTH + x;
-		}
 
-		static constexpr void gridCoordinate(uint16_t grid_index, uint8_t &ret_x, uint8_t &ret_y) {
-			ret_x = grid_index % GRID_WIDTH;
-			ret_y = grid_index / GRID_WIDTH;
-		}
-
-		static constexpr uint16_t getRoughIndex(uint16_t grid_index) {
-			return grid_index / (GRID_SIZE / ROUGH_SIZE);
-		}
-
-		static constexpr uint16_t getCoarseIndex(uint16_t grid_index) {
-			return grid_index / (GRID_SIZE / COARSE_SIZE);
-		}
 
 	public:
 		ResolutionGrid() {
@@ -196,7 +196,7 @@ namespace resolutiongrid {
 		}
 
 		//std::vector<Entity*> getNearbyEntities(vec2 center, int16_t r); // finds entities in a real world range
-		void getCoarseEntities(uint16_t grid_index, T *ret_buffer, uint16_t &ret_i) { // finds entities in a real world range
+		void getCoarseElements(uint16_t grid_index, T *ret_buffer, uint16_t &ret_i) { // finds entities in a real world range
 				// return all entities in v-ish area
 			//uint16_t grid_index = this->worldToGridIndex(v);
 
