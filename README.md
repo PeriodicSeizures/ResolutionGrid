@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
 	uint16_t ret_end = 0;
 
   // a test to get all entities in the coarse grid at pos1 (might be a bug with how entities are retrieved, but it seems to work)
-	grid.getCoarseEntities(worldToGridIndex(pos1), ret_buffer, ret_end);
+	grid.getCoarseElements(worldToGridIndex(pos1), ret_buffer, ret_end);
 	
 	printBuffer(ret_buffer, ret_end);
 	
@@ -72,4 +72,26 @@ int main(int argc, char **argv) {
 
 	return 0;
 }
+```
+
+## Usage
+Create a ResolutionGrid with the following:
+```cpp
+auto grid = ResolutionGrid<element, worldToGridIndexMethod>();
+```
+
+Add elements with:
+```cpp
+grid.insert(element);
+```
+
+And retrieve elements with:
+```cpp
+// where arg0 is the converted index, ret_buffer being the array to modify, and ret_end being a referenced int for index to start at
+grid.getCoarseElements(worldToGridIndex(pos1), ret_buffer, ret_end);
+```
+
+Finally, elements can have their positions updated with:
+```cpp
+grid.refresh();
 ```
